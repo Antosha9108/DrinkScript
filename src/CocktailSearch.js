@@ -45,7 +45,7 @@ function CocktailSearch() {
     const handleShowMore = () => {
         setShowMore(false); // Hide "Show More" button after it's clicked
     };
-
+    // 
     return (
         <div className="font-roboto ">
             <h1 className="font-semibold text-xl text-rose-500 my-8">DrinkScript</h1>
@@ -59,7 +59,7 @@ function CocktailSearch() {
             <button onClick={fetchCocktailData} className="bg-rose-500 text-white px-4 py-2 mb-8 rounded-r-lg border  border-rose-500 drop-shadow-lg">Search</button>
             {
                 cocktailData.length > 0 && (
-                    <div className=' text-slate-100 border border-gray-700 my-8 rounded-lg bg-gray-800/70 backdrop-opacity-10 divide-y divide-gray-800/70 drop-shadow-lg max-w-lg mx-auto'>
+                    <div className=' text-slate-100 border border-gray-700 my-8 rounded-lg bg-gray-800/70 backdrop-opacity-10 divide-y divide-gray-800/70 drop-shadow-lg max-w-lg min-w-xs sm:mx-auto m-10 min-w-[250px]'>
                         {/* Cocktail name */}
                         <p className='text-lg font-bold p-4'>{cocktailData[0].strDrink}</p>
 
@@ -111,7 +111,7 @@ function CocktailSearch() {
                 showMore === false && cocktailData.length > 1 && (
                     <div >
                         {cocktailData.slice(1).map((cocktail) => (
-                            <div key={cocktail.idDrink} className=' text-slate-100 border border-gray-700 my-8 rounded-lg bg-gray-800/70 backdrop-opacity-10 divide-y divide-gray-800/70 drop-shadow-lg max-w-lg mx-auto'>
+                            <div key={cocktail.idDrink} className=' text-slate-100 border border-gray-700 my-10 rounded-lg bg-gray-800/70 backdrop-opacity-10 divide-y divide-gray-800/70 drop-shadow-lg max-w-lg sm:mx-auto mx-10'>
                                 {/* Cocktail name */}
 
                                 <h3 className='mx-10 py-2 text-lg font-bold'>{cocktail.strDrink}</h3>
