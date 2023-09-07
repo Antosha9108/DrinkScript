@@ -35,7 +35,7 @@ function CocktailSearch() {
     }, [cocktailName]);
 
 
-    // this code renders new cocktails immediately when input is typed without a click of search button. If using this, comment out the search button and fix the border radius of input from rounded-l-lg to rounded-lg
+    // this code renders new cocktails immediately(automatically fetches the data) when input is typed without a click of search button. If using this, comment out the search button and fix the border radius of input from rounded-l-lg to rounded-lg
     useEffect(() => {
         // Fetch data only if cocktailName is provided
         if (cocktailName) {
