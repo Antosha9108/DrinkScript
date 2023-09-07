@@ -34,6 +34,8 @@ function CocktailSearch() {
         }
     }, [cocktailName]);
 
+
+    // this code renders new cocktails immediately when input is typed without a click of search button. If using this, comment out the search button and fix the border radius of input from rounded-l-lg to rounded-lg
     useEffect(() => {
         // Fetch data only if cocktailName is provided
         if (cocktailName) {
@@ -54,9 +56,10 @@ function CocktailSearch() {
                 placeholder="Enter cocktail name"
                 value={cocktailName}
                 onChange={(e) => setCocktailName(e.target.value)}
-                className='px-4 py-2 mb-8 bg-gray-800/70 text-slate-100 rounded-l-lg focus:outline-none border border-gray-700/70 focus:border-rose-500 drop-shadow-lg'
+                className='px-4 py-2 mb-8 bg-gray-800/70 text-slate-100 rounded-lg focus:outline-none border border-gray-700/70 focus:border-rose-500 drop-shadow-lg'
             />
-            <button onClick={fetchCocktailData} className="bg-rose-500 text-white px-4 py-2 mb-8 rounded-r-lg border  border-rose-500 drop-shadow-lg">Search</button>
+            {/* uncomment this search button and comment out useEffect on line 39 if want to render result onClick only */}
+            {/* <button onClick={fetchCocktailData} className="bg-rose-500 text-white px-4 py-2 mb-8 rounded-r-lg border  border-rose-500 drop-shadow-lg">Search</button> */}
             {
                 cocktailData.length > 0 && (
                     <div className=' text-slate-100 border border-gray-700 my-8 rounded-lg bg-gray-800/70 backdrop-opacity-10 divide-y divide-gray-800/70 drop-shadow-lg max-w-lg min-w-xs sm:mx-auto m-10 min-w-[250px]'>
